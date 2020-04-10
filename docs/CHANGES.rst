@@ -3,8 +3,8 @@ Changelog
 
 0.3.32 (unreleased)
 -------------------
-
-- Nothing changed yet.
+- document seconds repeats
+  [kiorky]
 
 
 0.3.31 (2020-01-02)
