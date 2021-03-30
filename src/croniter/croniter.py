@@ -530,7 +530,9 @@ class croniter(object):
             if c <= range_val:
                 candidate = c
                 break
-
+        if condidate > range_val:
+            # fix crontab "0 6 30 3 *" condidates only a element, then get_prev error return 2021-03-02 06:00:00, 
+            return -x
         return (candidate - x - range_val)
 
     def is_leap(self, year):
