@@ -1101,6 +1101,16 @@ class CroniterTest(base.TestCase):
             '2020-03-29T02:01:00+02:00',
             '2020-03-29T03:01:00+02:00'])
 
+    def test_issue_47(self):
+        base = datetime(2021, 3, 30, 4, 0)
+        itr = croniter('0 6 30 3 *', base)
+        prev1 = itr.get_prev(datetime)
+        self.assertEqual(prev1.year, base.year-1)
+        self.assertEqual(prev1.month, 3)
+        self.assertEqual(prev1.day, 30)
+        self.assertEqual(prev1.hour, 6)
+        self.assertEqual(prev1.minute, 0)
+
     def test_issue_142_dow(self):
         ret = []
         for i in range(1, 31):
